@@ -158,22 +158,24 @@ export default function Footer() {
             Quick Links
           </h4>
           {[
-            "About Us",
-            "Workshops",
-            "Blogs",
-            "Privacy Policy",
-            "Terms & Conditions",
+            { text: "Start A Chapter", href: "https://ppgsiitkgp.in/chapter" },
+            { text: "Know About PPGS", href: "https://ppgsiitkgp.in/" },
+            { text: "Blogs", href: "#" },
+            { text: "Privacy Policy", href: "#" },
+            { text: "Terms & Conditions", href: "#" },
           ].map((item, i) => (
             <a
               key={i}
-              href="#"
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex w-fit text-sm sm:text-[14px] font-DMsans 
                hover:text-gray-300 transition-colors
                after:content-[''] after:absolute after:left-0 after:-bottom-0.5 
                after:h-[2px] after:w-0 after:bg-gray-300 
                after:transition-all after:duration-500 hover:after:w-full"
             >
-              {item}
+              {item.text}
             </a>
           ))}
         </div>
@@ -187,6 +189,8 @@ export default function Footer() {
             <a
               key={i}
               href="#"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex w-fit text-sm sm:text-[14px] font-DMsans 
                hover:text-gray-300 transition-colors
                after:content-[''] after:absolute after:left-0 after:-bottom-0.5 

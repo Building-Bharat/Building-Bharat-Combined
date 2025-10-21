@@ -13,11 +13,14 @@ const activeIn = [
 
 const initiatives = [
   "UPSC Talks",
-  "Mentorship Programs",
-  "Policy Podcasts",
+  "Mentorship Program",
+  "Policy Podcast",
   "Policy Research Internship Program",
   "SANSAD- Youth Indian Parliament",
-  "Learning beyond the classroom",
+  "Learning beyond the classroom", 
+  "Insight Ignite",
+  "Policy Research",
+"Nationwide Policy-Tech Competition",
 ];
 
 const InitiativesSection = () => {
