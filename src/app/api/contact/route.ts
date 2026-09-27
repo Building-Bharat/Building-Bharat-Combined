@@ -22,13 +22,19 @@ export async function POST(request: Request) {
     //   );
     // }
 
-    // Create email transporter using your Gmail credentials
+    // Require credentials supplied through the deployment environment.
+    const emailUser = process.env.EMAIL_USER;
+    const emailPass = process.env.EMAIL_PASS;
+    if (!emailUser || !emailPass) {
+      return NextResponse.json(
+        { success: false, error: "Contact form is currently unavailable" },
+        { status: 503 }
+      );
+    }
+
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER || "thebuildingbharat@gmail.com",
-        pass: process.env.EMAIL_PASS || "nkfjimcmfdgwytze",
-      },
+      auth: { user: emailUser, pass: emailPass },
     });
 
     // Email content
